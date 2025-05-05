@@ -44,8 +44,9 @@ export default defineConfig({
   publicDir: false,
   base: buildConfig.base,
   server: {
-    port: 8080,
+    port: 80,
     host: true,
+    allowedHosts: ['chat.madhousewallet.com'],
   },
   plugins: [
     topLevelAwait({
@@ -93,6 +94,13 @@ export default defineConfig({
     copyPublicDir: false,
     rollupOptions: {
       plugins: [inject({ Buffer: ['buffer', 'Buffer'] })],
+            output:{
+                manualChunks(id) {
+                    if (id.includes('node_modules')) {
+                        return id.toString().split('node_modules/')[1].split('/')[0].toString();
+                    }
+                }
+            }
     },
   },
 });
