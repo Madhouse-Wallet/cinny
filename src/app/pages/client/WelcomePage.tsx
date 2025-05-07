@@ -14,8 +14,16 @@ export function WelcomePage() {
       >
         <PageHeroSection>
           <PageHero
-            icon={<img width="70" height="70" src={CinnySVG} alt="Cinny Logo" />}
-            title="Welcome to Cinny"
+            icon={
+              <img
+                width="70"
+                height="70"
+                style={{ objectFit: 'contain' }}
+                src={'https://media.madhousewallet.com/logo.png'}
+                alt="Madhouse Wallet"
+              />
+            }
+            title="Welcome to Madhouse Wallet"
             subTitle={
               <span>
                 Yet another matrix client.{' '}

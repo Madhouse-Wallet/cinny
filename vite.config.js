@@ -44,7 +44,7 @@ export default defineConfig({
   publicDir: false,
   base: buildConfig.base,
   server: {
-    port: 80,
+    port: 3000,
     host: true,
     allowedHosts: ['chat.madhousewallet.com'],
   },
@@ -70,8 +70,8 @@ export default defineConfig({
       },
       devOptions: {
         enabled: true,
-        type: 'module'
-      }
+        type: 'module',
+      },
     }),
   ],
   optimizeDeps: {
@@ -94,13 +94,13 @@ export default defineConfig({
     copyPublicDir: false,
     rollupOptions: {
       plugins: [inject({ Buffer: ['buffer', 'Buffer'] })],
-            output:{
-                manualChunks(id) {
-                    if (id.includes('node_modules')) {
-                        return id.toString().split('node_modules/')[1].split('/')[0].toString();
-                    }
-                }
-            }
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            return id.toString().split('node_modules/')[1].split('/')[0].toString();
+          }
+        },
+      },
     },
   },
 });

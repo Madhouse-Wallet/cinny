@@ -1,6 +1,19 @@
 import { createTheme } from '@vanilla-extract/css';
 import { color } from 'folds';
 
+const primaryColorVariants = {
+  Main: '#df723b',
+  MainHover: '#c66633',
+  MainActive: '#b35c2e',
+  MainLine: '#a35229',
+  OnMain: '#ffffff',
+  Container: '#f5c9ac',
+  ContainerHover: '#f2bfa0',
+  ContainerActive: '#efb594',
+  ContainerLine: '#ecaa88',
+  OnContainer: '#5a2f16',
+};
+
 export const silverTheme = createTheme(color, {
   Background: {
     Container: '#DEDEDE',
@@ -26,18 +39,7 @@ export const silverTheme = createTheme(color, {
     OnContainer: '#000000',
   },
 
-  Primary: {
-    Main: '#1245A8',
-    MainHover: '#103E97',
-    MainActive: '#0F3B8F',
-    MainLine: '#0E3786',
-    OnMain: '#FFFFFF',
-    Container: '#C4D0E9',
-    ContainerHover: '#B8C7E5',
-    ContainerActive: '#ACBEE1',
-    ContainerLine: '#A0B5DC',
-    OnContainer: '#0D3076',
-  },
+  Primary: primaryColorVariants,
 
   Secondary: {
     Main: '#000000',
@@ -123,18 +125,7 @@ const darkThemeData = {
     OnContainer: '#F2F2F2',
   },
 
-  Primary: {
-    Main: '#BDB6EC',
-    MainHover: '#B2AAE9',
-    MainActive: '#ADA3E8',
-    MainLine: '#A79DE6',
-    OnMain: '#2C2843',
-    Container: '#413C65',
-    ContainerHover: '#494370',
-    ContainerActive: '#50497B',
-    ContainerLine: '#575086',
-    OnContainer: '#E3E1F7',
-  },
+  Primary: primaryColorVariants,
 
   Secondary: {
     Main: '#FFFFFF',
@@ -222,6 +213,8 @@ export const butterTheme = createTheme(color, {
     ContainerLine: '#59584E',
     OnContainer: '#FFFBDE',
   },
+
+  Primary: primaryColorVariants,
 
   Secondary: {
     Main: '#FFFBDE',
