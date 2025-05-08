@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Button, Icon, Icons, Text, config, toRem } from 'folds';
 import { Page, PageHero, PageHeroSection } from '../../components/page';
+import mwSVG from '../../../../public/res/svg/logo.svg';
 
 export function WelcomePage() {
   return (
@@ -18,7 +19,7 @@ export function WelcomePage() {
                 width="70"
                 height="70"
                 style={{ objectFit: 'contain' }}
-                src={'https://media.madhousewallet.com/logo.png'}
+                src={mwSVG}
                 alt="Madhouse Wallet"
               />
             }
