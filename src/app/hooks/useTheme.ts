@@ -27,11 +27,13 @@ export const SilverTheme: Theme = {
   kind: ThemeKind.Light,
   classNames: ['silver-theme', silverTheme, onLightFontWeight, 'prism-light'],
 };
+
 export const DarkTheme: Theme = {
   id: 'dark-theme',
   kind: ThemeKind.Dark,
   classNames: ['dark-theme', darkTheme, onDarkFontWeight, 'prism-dark'],
 };
+
 export const ButterTheme: Theme = {
   id: 'butter-theme',
   kind: ThemeKind.Dark,
@@ -40,7 +42,6 @@ export const ButterTheme: Theme = {
 
 export const useThemes = (): Theme[] => {
   const themes: Theme[] = useMemo(() => [LightTheme, SilverTheme, DarkTheme, ButterTheme], []);
-
   return themes;
 };
 
@@ -75,24 +76,16 @@ export const useSystemThemeKind = (): ThemeKind => {
   return themeKind;
 };
 
+// Modify this hook to always return DarkTheme
 export const useActiveTheme = (): Theme => {
-  const systemThemeKind = useSystemThemeKind();
   const themes = useThemes();
   const [systemTheme] = useSetting(settingsAtom, 'useSystemTheme');
   const [themeId] = useSetting(settingsAtom, 'themeId');
   const [lightThemeId] = useSetting(settingsAtom, 'lightThemeId');
   const [darkThemeId] = useSetting(settingsAtom, 'darkThemeId');
 
-  if (!systemTheme) {
-    const selectedTheme = themes.find((theme) => theme.id === themeId) ?? LightTheme;
-
-    return selectedTheme;
-  }
-
-  const selectedTheme =
-    systemThemeKind === ThemeKind.Dark
-      ? themes.find((theme) => theme.id === darkThemeId) ?? DarkTheme
-      : themes.find((theme) => theme.id === lightThemeId) ?? LightTheme;
+  // Always use DarkTheme, ignoring system preferences or other settings
+  const selectedTheme = themes.find((theme) => theme.id === darkThemeId) ?? DarkTheme;
 
   return selectedTheme;
 };

@@ -4,7 +4,7 @@ import { Page, PageContent, PageHeader } from '../../../components/page';
 import { SequenceCard } from '../../../components/sequence-card';
 import { SequenceCardStyle } from '../styles.css';
 import { SettingTile } from '../../../components/setting-tile';
-import CinnySVG from '../../../../../public/res/svg/cinny.svg';
+import mwSVG from '../../../../../public/res/svg/mw.svg';
 import cons from '../../../../client/state/cons';
 import { clearCacheAndReload } from '../../../../client/initMatrix';
 import { useMatrixClient } from '../../../hooks/useMatrixClient';
@@ -39,7 +39,7 @@ export function About({ requestClose }: AboutProps) {
                 <Box shrink="No">
                   <img
                     style={{ width: toRem(60), height: toRem(60) }}
-                    src={CinnySVG}
+                    src={mwSVG}
                     alt="Madhouse Wallet logo"
                   />
                 </Box>

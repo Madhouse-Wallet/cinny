@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, Button, Icon, Icons, Text, config, toRem } from 'folds';
 import { Page, PageHero, PageHeroSection } from '../../components/page';
-import CinnySVG from '../../../../public/res/svg/cinny.svg';
 
 export function WelcomePage() {
   return (
@@ -23,7 +22,7 @@ export function WelcomePage() {
                 alt="Madhouse Wallet"
               />
             }
-            title="Welcome to Madhouse Wallet"
+            title="Welcome to Madhouse Chat"
             subTitle={
               <span>
                 Yet another matrix client.{' '}
