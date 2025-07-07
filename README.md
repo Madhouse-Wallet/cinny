@@ -1,4 +1,4 @@
-# Madhouse Wallet
+# Cinny for Madhouse Wallet
 <p>
     <a href="https://github.com/ajbura/cinny/releases">
         <img alt="GitHub release downloads" src="https://img.shields.io/github/downloads/ajbura/cinny/total?logo=github&style=social"></a>
